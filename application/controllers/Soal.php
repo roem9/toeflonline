@@ -160,6 +160,9 @@ class Soal extends CI_Controller {
     }
 
     public function add_jawaban_toefl(){
+        
+        $config = $this->config();
+
         $id_tes = $this->input->post("id_tes");
         $tes = $this->Main_model->get_one("tes", ["md5(id_tes)" => $id_tes]);
         $soal = $this->Main_model->get_one("soal", ["id_soal" => $tes['id_soal']]);
@@ -167,7 +170,6 @@ class Soal extends CI_Controller {
         $id_sub = $this->input->post("kunci_sesi");
         
         $text = "";
-
         
         for ($i=1; $i < $sesi+1; $i++) {
             $benar = 0;
@@ -202,7 +204,6 @@ class Soal extends CI_Controller {
                 $nilai_reading = $benar;
             }
         }
-
         
         $text = substr($text, 0, -1);
         $text = '{"jawaban":['.$text.']}';
@@ -226,6 +227,14 @@ class Soal extends CI_Controller {
         
         $skor = skor($nilai_listening, $nilai_structure, $nilai_reading);
 
+        $replace_wa = array(
+            ' ' => '%20',
+            '"' => '%22'
+        );
+
+        $nama = str_replace(array_keys($replace_wa), $replace_wa, $this->input->post("nama"));
+        $nama_tes = str_replace(array_keys($replace_wa), $replace_wa, $tes['nama_tes']);
+
         $replacements = array(
             '$nama' => $this->input->post("nama"),
             '$t4_lahir' => $this->input->post("t4_lahir"),
@@ -241,6 +250,7 @@ class Soal extends CI_Controller {
             '$skor' => $skor,
             '$tgl_tes' => tgl_indo($tes["tgl_tes"], "lengkap"),
             '$tgl_pengumuman' => tgl_indo($tes["tgl_pengumuman"], "lengkap"),
+            '$link' => "<a target='_blank' href='https://wa.me/+".$config[3]['value']."?text=Hi%20Kak%2C%20Saya%".$nama."%20telah%20mengikuti%20".$nama_tes.".%20Saya%20ingin%20memiliki%20sertifikat%20digital%20hasil%20tes%20TOEFL%20Online'>Pesan Sertifikat Disini</a>",
         );
 
         $msg = str_replace(array_keys($replacements), $replacements, $tes['msg']);
@@ -377,6 +387,11 @@ class Soal extends CI_Controller {
     
         return $hari_ini;
     
+    }
+
+    public function config(){
+        $data = $this->Main_model->get_all("config");
+        return $data;
     }
 }
 
