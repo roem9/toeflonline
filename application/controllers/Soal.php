@@ -250,7 +250,7 @@ class Soal extends CI_Controller {
             '$skor' => $skor,
             '$tgl_tes' => tgl_indo($tes["tgl_tes"], "lengkap"),
             '$tgl_pengumuman' => tgl_indo($tes["tgl_pengumuman"], "lengkap"),
-            '$link' => "<a target='_blank' href='https://wa.me/+".$config[3]['value']."?text=Hi%20Kak%2C%20Saya%".$nama."%20telah%20mengikuti%20".$nama_tes.".%20Saya%20ingin%20memiliki%20sertifikat%20digital%20hasil%20tes%20TOEFL%20Online'>Pesan Sertifikat Disini</a>",
+            '$link' => "<a target='_blank' href='https://wa.me/+".$config[3]['value']."?text=Hi%20Kak%2C%20Saya%20".$nama."%20telah%20mengikuti%20".$nama_tes.".%20Saya%20ingin%20memiliki%20sertifikat%20digital%20hasil%20tes%20TOEFL%20Online'>Pesan Sertifikat Disini</a>",
         );
 
         $msg = str_replace(array_keys($replacements), $replacements, $tes['msg']);

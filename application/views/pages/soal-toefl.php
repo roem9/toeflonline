@@ -446,7 +446,13 @@
                     cancelButtonText: 'Tidak'
                 }).then(function (result) {
                     if (result.value) {
-                        
+                        var audios = document.getElementsByTagName('audio');  
+                        for(var i = 0, len = audios.length; i < len;i++){  
+                            if(audios[i]){  
+                                audios[i].pause();  
+                            }  
+                        } 
+
                         // mulai hitung waktu
                         if(click == false){
                             sec = 80 * 60,
