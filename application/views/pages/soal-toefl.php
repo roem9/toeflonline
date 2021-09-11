@@ -177,7 +177,7 @@
                                                     }?>
                                             <?php elseif($data['item'] == "audio") :
                                                 $item = '<center>
-                                                            <audio id="audio-'.$data['id_item'].'" class="audio" data-id="'.$data['id_item'].'"><source src="'.$link['value'].'/assets/myaudio/'.$data['data'].'" type="audio/mpeg"></audio>
+                                                            <audio id="audio-'.$data['id_item'].'" class="audio" data-id="'.$data['id_item'].'"><source src="'.$link['value'].'/assets/myaudio/'.$data['data'].'?t='.time().'" type="audio/mpeg"></audio>
                                                             <progress id="seekbar-'.$data['id_item'].'" value="0" max="1" style="width:100%;"></progress><br>
                                                             <button class="btn btn-success btnAudio" data-id="'.$data['id_item'].'" type="button">'.tablerIcon("player-play", "").' play</button>
                                                             <p><small class="text-danger"><i>note : perhatian, audio hanya dapat diputar satu kali</i></small></p>
