@@ -19,7 +19,7 @@ class Sertifikat extends CI_Controller {
             $peserta['nama'] = $peserta['nama'];
             $peserta['title'] = "Sertifikat ".$peserta['nama'];
             $peserta['t4_lahir'] = ucwords(strtolower($peserta['t4_lahir']));
-            $peserta['tahun'] = date('Y', strtotime($tes['tgl_tes']));
+            $peserta['tahun'] = date('y', strtotime($tes['tgl_tes']));
             $peserta['bulan'] = getRomawi(date('m', strtotime($tes['tgl_tes'])));
             $peserta['istima'] = poin("Listening", $peserta['nilai_listening']);
             $peserta['tarakib'] = poin("Structure", $peserta['nilai_structure']);
@@ -33,7 +33,7 @@ class Sertifikat extends CI_Controller {
             $peserta['skor'] = $skor;
 
             // $peserta['no_doc'] = "{$peserta['no_doc']}/TOAFL/ACP/{$peserta['bulan']}/{$peserta['tahun']}";
-            $peserta['no_doc'] = "{$peserta['no_doc']}/{$peserta['bulan']}/{$peserta['tahun']}";
+            $peserta['no_doc'] = "{$peserta['tahun']}/{$peserta['no_doc']}";
         }
 
         // $this->load->view("pages/layout/header-sertifikat", $peserta);
