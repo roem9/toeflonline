@@ -111,7 +111,7 @@ class Soal extends CI_Controller {
                         
                         $number++;
 
-                    } else if($soal['item'] == "petunjuk" || $soal['item'] == "audio"){
+                    } else if($soal['item'] == "petunjuk" || $soal['item'] == "audio" || $soal['item'] == "gambar"){
                         $data['sesi'][$i]['soal'][$j] = $soal;
                     }
 
