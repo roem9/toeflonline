@@ -31,7 +31,7 @@
                             </div>
                         </div>
                         <div class="form-footer">
-                            <button type="button" class="btn btn-primary w-100 btnSignIn">Masuk</button>
+                            <button type="button" class="btn btn-primary w-100 btnSignIn" style="display:none">Masuk</button>
                         </div>
                     <?php endif;?>
                 </div>
@@ -269,6 +269,10 @@
 <?php $this->load->view("_partials/footer")?>
 
 <script>
+    $(window).on('load', function (e) {
+        $(".btnSignIn").show()
+    })
+    
     $('body').bind('cut copy paste', function(event) {
         event.preventDefault();
     });
