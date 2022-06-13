@@ -30,8 +30,8 @@
                                             <p>Tgl Tes : <?= tgl_indo($tgl_tes)?></p>
                                             <p>Berlaku Sampai : <?= tgl_indo($tgl_berakhir)?></p>
                                             <p><small class="text-danger"><i>Catatan : Data diatas adalah data tes TOEFL peserta yang sebenar-benarnya. Dan tidak ada pengurangan dan penambahan nilai sedikitpun</i></small></p>
-                                            <p><b>Masih belum puas dengan skor TOEFL yang Anda dapatkan hari ini? Yuk Belajar TOEFL Online di</b> <a href="https://bahasainggris.net/" target="_blank"><b>bahasainggris.net</b></a></p>
-                                            <p><b>Bahasa Inggris jadi mudah hanya di</b> <a href="https://bahasainggris.net/" target="_blank"><b>bahasainggris.net</b></a></p>
+                                            <p><b>Masih belum puas dengan skor TOEFL yang Anda dapatkan hari ini? Yuk Belajar TOEFL Online di</b> <a href="https://toeflpare.com/" target="_blank"><b>toeflpare.com</b></a></p>
+                                            <p><b>Bahasa Inggris jadi mudah hanya di</b> <a href="https://toeflpare.com/" target="_blank"><b>toeflpare.com</b></a></p>
                                         </div>
                                     </div>
                                 <?php else :?>
