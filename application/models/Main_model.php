@@ -95,4 +95,9 @@ class Main_model extends CI_MODEL{
         $hasil_rupiah = "Rp " . number_format($angka,0,',','.');
         return $hasil_rupiah;
     }
+
+    public function config(){
+        $data = $this->get_all("config");
+        return $data;
+    }
 }
