@@ -63,12 +63,10 @@
                                         <p>Nilai Reading &nbsp; : <b><?= poin("Reading", $tes_peserta['nilai_reading'])?></b> </p>
                                         <div class="d-flex justify-content-between">
                                             <p>Skor TOEFL : <b><?= skor($tes_peserta['nilai_listening'], $tes_peserta['nilai_structure'], $tes_peserta['nilai_reading'])?></b></p>
-                                            <?php if($peserta['no_doc'] == ""):?>
-                                                <a href="javascript:void(0)" class="btn btn-success addSertifikat" data-skor="<?= $tes_peserta['skor_toefl']?>" data-id="<?= $tes_peserta['id']?>"><?= tablerIcon("award", "me-1")?> Buat Sertifikat</a>
+                                            <?php if($tes_peserta['status'] != "off") :?>
+                                                <a href="<?= base_url()?>peserta/sertifikat/no/<?= md5($peserta['id_peserta'])?>" target="_blank" class="btn btn-warning"><?= tablerIcon("award", "me-1")?> Sertifikat</a>
                                             <?php else :?>
-                                                <?php if($tes_peserta['status'] != "off") :?>
-                                                    <a href="<?= base_url()?>peserta/sertifikat/no/<?= md5($peserta['id_peserta'])?>" target="_blank" class="btn btn-warning"><?= tablerIcon("award", "me-1")?> Sertifikat</a>
-                                                <?php endif;?>
+                                                <a href="javascript:void(0)" class="btn btn-success addSertifikat" data-skor="<?= $tes_peserta['skor_toefl']?>" data-id="<?= $tes_peserta['id']?>"><?= tablerIcon("award", "me-1")?> Buat Sertifikat</a>
                                             <?php endif;?>
                                         </div>
                                     </div>
